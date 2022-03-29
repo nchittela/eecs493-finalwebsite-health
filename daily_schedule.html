@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/daily_schedule.css">
+    <link href='fullcalendar/lib/main.css' rel='stylesheet' />
+    <script src='fullcalendar/lib/main.js'></script>
+    <script src="scripts/daily_schedule.js"></script>
+</head>
+
+<body>
+    <div id='external-events'>
+        <div id="tasks">
+            <h2>First add a new task</h2>
+            <h3>Then drag and drop task onto calendar</h3>
+            <input type="text" id="taskInput" placeholder="Meditate...">
+            <button type="button" onclick="addButton()">Add</button>
+        </div>
+
+        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+            <div class='fc-event-main'>Go for a walk</div>
+        </div>
+        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+            <div class='fc-event-main'>Study</div>
+        </div>
+        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+            <div class='fc-event-main'>Take a study break </div>
+        </div>
+    </div>
+
+    <div id='calendar-container'>
+        <div id='calendar'></div>
+    </div>
+</body>
+
+</html>
