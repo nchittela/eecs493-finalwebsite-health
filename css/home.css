@@ -1,0 +1,128 @@
+#homeTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-size: 70px;
+}
+
+.subheading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+}
+
+#navbar {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 14px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#spinnerLink {
+  padding-right: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  background-color: rgb(149, 229, 255);
+  border-radius: 12px;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+#widgetsDiv {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+#scoresDiv {
+  width: 30%;
+  /* border: 2px solid black; */
+  margin: 10px;
+}
+
+#dailyCircle {
+  background-color: rgb(255, 204, 74);
+  width: 50%;
+  border-radius: 50%;
+  line-height: 0;
+  position: relative;
+}
+
+#dailyCircle::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+#dailyCircleNum {
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 80px;
+}
+
+#projCircle {
+  background-color: rgb(196, 255, 77);
+  width: 50%;
+  border-radius: 50%;
+  line-height: 0;
+  position: relative;
+}
+
+#projCircle::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+#projCircleNum {
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 80px;
+}
+
+#separatorDiv {
+  width: 60%;
+}
+
+#scheduleDiv {
+  height: 100px;
+  /* border: 2px solid black; */
+  margin: 10px;
+}
+
+.buttonTitle {
+  background-color: rgb(149, 229, 255);
+  border-radius: 12px;
+  width: 40%;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.buttonTitle::after {
+  text-decoration: none;
+  color: black;
+}
+
+#recDiv {
+  height: 100px;
+  /* border: 2px solid black; */
+  margin: 10px;
+}
