@@ -1,0 +1,9 @@
+#racetrack_img {
+  height: 150px;
+}
+
+#car {
+  position: absolute;
+  top: 14px;
+  left: -105px;
+}
