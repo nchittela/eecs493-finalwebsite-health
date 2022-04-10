@@ -1,3 +1,21 @@
+body{
+    font-family: 'Nunito', sans-serif;
+}
 .wheels img {
     -webkit-transition: -webkit-transform 2s ease-out;
+}
+
+.wheels {
+    position: relative;
+}
+.arrow{
+    position: absolute;
+}
+.roulette{
+    display: inline-block;
+    object-fit: cover;
+    object-position: center;
+    height: 250px;
+    width: 250px;
+    margin-left: 20px;
 }
