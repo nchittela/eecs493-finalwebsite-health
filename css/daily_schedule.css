@@ -1,8 +1,6 @@
-html, body {
-  margin: 0;
-  padding: 0;
+html,
+body {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-  font-size: 14px;
 }
 
 #external-events {
@@ -10,8 +8,8 @@ html, body {
   z-index: 2;
   top: 20px;
   left: 20px;
-  width: 200px;
-  height: 300px;
+  width: 250px;
+  height: 560px;
   padding: 0 10px;
   border: 1px solid #ccc;
   background: #eee;
@@ -20,15 +18,47 @@ html, body {
 #external-events .fc-event {
   cursor: move;
   margin: 3px 0;
+  width: 245px;
+  height: 40px;
+  text-align: center;
+}
+
+#task-header {
+  font-size: 20px;
+  text-align: center;
 }
 
 #calendar-container {
   position: relative;
   z-index: 1;
-  margin-left: 200px;
+  margin-left: 300px;
 }
 
 #calendar {
   max-width: 1100px;
   margin: 20px auto;
+}
+
+#delete-button {
+  position: fixed;
+  visibility: hidden;
+  z-index: 3;
+  top: 520px;
+  left: 20px;
+  width: 120px;
+  height: 50px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+#complete-button {
+  position: fixed;
+  visibility: hidden;
+  z-index: 3;
+  top: 520px;
+  left: 150px;
+  width: 120px;
+  height: 50px;
+  margin-left: 10px;
+  text-align: center;
 }
