@@ -1,6 +1,36 @@
-body{
+.popup {
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     font-family: 'Nunito', sans-serif;
 }
+
+.popup .roulette-popup {
+    clear: both;
+    visibility: hidden;
+    position: fixed;
+    width: 100px;
+    left: 4px;
+    background-color: white;
+    border: 3px;
+    border-color: black;
+    border-radius: 10px;
+    padding: 5px;
+    z-index: 1;
+}
+
+.popup .show {
+    visibility: visible;
+}
+
+.categories {
+    font-size: small;
+}
+
 .wheels img {
     -webkit-transition: -webkit-transform 2s ease-out;
 }
@@ -8,10 +38,12 @@ body{
 .wheels {
     position: relative;
 }
-.arrow{
+
+.arrow {
     position: absolute;
 }
-.roulette{
+
+.roulette {
     display: inline-block;
     object-fit: cover;
     object-position: center;

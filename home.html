@@ -1,43 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="description" content="Page Description">
-		<title>Balance</title>
-		<link rel="stylesheet" href="css/home.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-		<!-- <script src="/scripts/script.js"></script> -->
-	</head>
-	<body>
-    <nav>
-      <ul id="navbar">
-        <li id="homeTitle">BALANCE</li>
-        <li id="spinnerLink"><a href = "activity.html">TASK SPINNER</a></li>
-      </ul>
-    </nav>
 
-    <div id = "widgetsDiv">
-      <div id = "scoresDiv">
-        <h2 class = "subheading">DAILY SCORE</h2>
-        <div id = "dailyCircle">
-          <div id = "dailyCircleNum">62</div>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Page Description">
+  <title>Balance</title>
+  <script type="text/javascript">
+    var taskDictionary = {
+      Exercise: {
+        daily: [],
+        projected: []
+      },
+      Productivity: {
+        daily: [],
+        projected: []
+      },
+      MentalWellbeing: {
+        daily: [],
+        projected: []
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" type="text/css" href="css/daily_schedule.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link href='fullcalendar/lib/main.css' rel='stylesheet' />
+  <link rel="stylesheet" href="css/style.css">
+  <script src='fullcalendar/lib/main.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="scripts/daily_schedule.js"></script>
+  <script src="scripts/scores.js" async></script>
+  <script src='scripts/jquery.min.js'></script>
+  <script src='scripts/activity.js'></script>
+  <script src='scripts/racetrack.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/racetrack.css">
+  <!-- <script src="/scripts/script.js"></script> -->
+</head>
+
+<body>
+  <nav>
+    <ul id="navbar">
+      <li id="homeTitle">BALANCE</li>
+      <li id="spinnerLink">
+        <div class="popup">
+          <p onclick="popupSpinner()">Task Spinner</p>
+          <div class="roulette-popup" id="roulette-popup">
+            <div class="categories">
+              <p>cardio</p>
+              <p>yoga</p>
+              <p>arms</p>
+              <p>legs</p>
+              <p>core</p>
+            </div>
+            <div class="check-box"></div>
+            <div class="wheels"></div>
+            <div class="result"></div>
+          </div>
         </div>
-        <h2 class = "subheading">PROJECTED SCORE</h2>
-        <div id = "projCircle">
-          <div id = "projCircleNum">73</div>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="widgetsDiv">
+    <div id="scoresDiv">
+      <h2 class="subheading">DAILY SCORE</h2>
+      <div id="dailyCircle">
+        <div id="dailyCircleNum">100</div>
+      </div>
+      <h2 class="subheading">PROJECTED SCORE</h2>
+      <div id="projCircle">
+        <div id="projCircleNum">100</div>
+      </div>
+    </div>
+
+    <div id="separatorDiv">
+      <!-- <div id="scheduleDiv"> -->
+      <div id='external-events'>
+        <div id="task-header">
+          <h2>Add a new task</h2>
+          <h3>Drag and Drop Tasks onto calendar</h3>
+        </div>
+        <form id="addTaskForm" onsubmit="return addButton()">
+          <input type="text" placeholder="Meditate" required />
+          <br />
+          <select name="categoryOptions" required>
+            <option></option>
+            <option value="1">Exercise</option>
+            <option value="2">Productivity</option>
+            <option value="3">Mental Wellbeing</option>
+          </select>
+          <button type="submit" disabled="true">Add</button>
+        </form>
+
+        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+          <div class='fc-event-main'>Go for a walk</div>
+        </div>
+        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+          <div class='fc-event-main'>Study</div>
+        </div>
+        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+          <div class='fc-event-main'>Take a break</div>
+        </div>
+        <div>
+          <button type="button" id="delete-button" onclick="deleteButtonEventClick()">Delete Event</button>
+          <button type="button" id="complete-button" onclick="completeButtonEventClick()">Complete Event</button>
         </div>
       </div>
 
-      <div id = "separatorDiv">
-        <div id = "scheduleDiv">
-          <h2 class = "subheading buttonTitle"><a href = "daily_schedule.html">SCHEDULE</a></h2>
-        </div>
-  
-        <div id = "recDiv">
-          <h2 class = "subheading buttonTitle"><a href = "recommended.html">RECOMMENDED TASKS</a></h2>
-  
-        </div>
-      </div> <!-- separator for schedule and recommended widgets -->
+      <div id='calendar-container'>
+        <div id='calendar'></div>
+      </div>
+      <!-- </div> -->
+
+      <!-- <div id="recDiv">
+        <h2 class="subheading buttonTitle"><a href="recommended.html">RECOMMENDED TASKS</a></h2>
+
+      </div> -->
+    </div> <!-- separator for schedule and recommended widgets -->
+  </div>
+  <div id="racetrack">
+    <img src="images/racetrack.jpeg" id="racetrack_img" />
+    <div id="car">
+      <img src="images/car.png" height="140px" />
     </div>
-	</body>
+  </div>
+</body>
+
 </html>

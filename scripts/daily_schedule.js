@@ -1,6 +1,5 @@
 let globalCal;
 let clickedEvent = "";
-let taskDictionary = {};
 
 document.addEventListener('DOMContentLoaded', function () {
     loadCalendar();
@@ -130,7 +129,7 @@ function completeButtonEventClick() {
 
 function addTaskToDictionary(eventIn) {
     var eventId = eventIn.event.id;
-    taskDictionary[eventId] = 5;
+    console.log(taskDictionary["Exercise"]["daily"][0] = eventId);
 }
 
 function popUpFunction() {
