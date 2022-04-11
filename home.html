@@ -80,9 +80,9 @@
           <h3>Drag and Drop Tasks onto calendar</h3>
         </div>
         <form id="addTaskForm" onsubmit="return addButton()">
-          <input type="text" placeholder="Meditate" required />
+          <input id="taskInputBox" type="text" placeholder="Meditate" required />
           <br />
-          <select name="categoryOptions" id="categorySelection" required>
+          <select id="categorySelection" name="categoryOptions" required>
             <option></option>
             <option value="1">Exercise</option>
             <option value="2">Productivity</option>
@@ -90,26 +90,24 @@
           </select>
           <button type="submit" disabled="true">Add</button>
         </form>
-
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>Go for a walk</div>
+        <div id="addedEvents">
+          <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+            <div class='fc-event-main'>Go for a walk</div>
+          </div>
+          <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+            <div class='fc-event-main'>Study</div>
+          </div>
+          <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+            <div class='fc-event-main'>Take a break</div>
+          </div>
         </div>
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>Study</div>
-        </div>
-        <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-          <div class='fc-event-main'>Take a break</div>
-        </div>
-
-        <div>
-          <button type="button" id="delete-button" onclick="deleteButtonEventClick()">Delete Event</button>
-          <button type="button" id="complete-button" onclick="completeButtonEventClick()">Complete Event</button>
-        </div>
-
       </div>
-
       <div id='calendar-container'>
         <div id='calendar'></div>
+      </div>
+      <div id="addDeleteEvents">
+        <button type="button" id="delete-button" onclick="deleteButtonEventClick()">Delete Event</button>
+        <button type="button" id="complete-button" onclick="completeButtonEventClick()">Complete Event</button>
       </div>
     </div> <!-- separator for schedule and recommended widgets -->
   </div>

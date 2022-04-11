@@ -4,16 +4,35 @@ body {
 }
 
 #external-events {
-  z-index: 2;
-  width: 40%;
+  width: 25%;
+  /* height: 80%; */
   background: #eee;
 }
 
-#external-events .fc-event {
+#addTaskForm {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2%;
+  justify-content: center;
+}
+
+#taskInputBox {
+  width: 100%;
+}
+
+#categorySelection {
+  width: 80%;
+}
+
+#addedEvents {
+  display: grid;
+  margin: 4%;
+  gap: 10px;
+}
+
+.fc-event {
+  height: 35px;
   cursor: move;
-  margin: 3px 0;
-  width: 220px;
-  height: 40px;
   text-align: center;
 }
 
@@ -23,7 +42,6 @@ body {
 }
 
 #calendar-container {
-  z-index: 2;
   width: 60%;
   margin-left: 10px;
 }
@@ -32,24 +50,22 @@ body {
   height: 100%;
 }
 
+#addDeleteEvents {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
 #delete-button {
   /* visibility: hidden; */
   display: none;
-  z-index: 3;
-  width: 120px;
-  height: 50px;
-  margin-left: 10px;
-  align-self: flex-end;
+  height: 35px;
   text-align: center;
 }
 
 #complete-button {
   /* visibility: hidden; */
   display: none;
-  z-index: 3;
-  width: 120px;
-  height: 50px;
-  margin-left: 10px;
-  align-self: flex-end;
+  height: 35px;
   text-align: center;
 }
