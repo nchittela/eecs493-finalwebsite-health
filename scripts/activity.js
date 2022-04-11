@@ -14,7 +14,6 @@ $(document).ready(function () {
     buildChecklist(cat, $('.check-box'));
     check();
     submit();
-    console.log(taskDictionary["Exercise"]["daily"][0]);
 });
 
 function popupSpinner() {

@@ -1,5 +1,11 @@
 let globalCal;
 let clickedEvent = "";
+// 0 is nothing, 1 is Exercise, 2 is Productivity 3 is Mental Wellbeing
+let addedTaskDict = {
+    "Go for a walk": '1',
+    "Study": '2',
+    "Take a break": '3'
+};
 
 document.addEventListener('DOMContentLoaded', function () {
     loadCalendar();
@@ -81,18 +87,24 @@ function addButton() {
     const currentDiv = document.getElementById("external-events");
     currentDiv.appendChild(outerNewDiv)
 
-    var addedTask = document.getElementById(taskText);
-    var topVal = addedTask.offsetTop
-    if (topVal > 455) {
-        addedTask.style.display = 'none';
-    }
+    // add task to task list dictionary with its category
+    // 0 is nothing, 1 is Exercise, 2 is Productivity 3 is Mental Wellbeing
+    const taskCategory = document.getElementById("addTaskForm")[1].value;
+    addedTaskDict[taskText] = taskCategory;
+
+    // var addedTask = document.getElementById(taskText);
+    // var topVal = addedTask.offsetTop
+    // if (topVal > 455) {
+    //     addedTask.style.display = 'none';
+    // }
     return false;
 }
 
 function deleteButtonEventClickShow() {
     var deleteButton = "delete-button";
     var completeButton = "complete-button";
-    var styleProp = "visibility"
+    // var styleProp = "visibility"
+    var styleProp = "display";
     var deleteElement = document.getElementById(deleteButton);
     var completeElement = document.getElementById(completeButton);
     if (deleteElement.currentStyle) {
@@ -101,43 +113,75 @@ function deleteButtonEventClickShow() {
     else if (window.getComputedStyle) {
         var deleteElementVis = document.defaultView.getComputedStyle(deleteElement, null).getPropertyValue(styleProp);
     }
-    if (deleteElementVis === "hidden") {
-        deleteElement.style.visibility = "visible";
-        completeElement.style.visibility = "visible";
+    // if (deleteElementVis === "hidden") {
+    //     deleteElement.style.visibility = "visible";
+    //     completeElement.style.visibility = "visible";
+    // } else {
+    //     deleteElement.style.visibility = "hidden";
+    //     completeElement.style.visibility = "hidden";
+    // }
+    if (deleteElementVis === "none") {
+        deleteElement.style.display = "block";
+        completeElement.style.display = "block";
     } else {
-        deleteElement.style.visibility = "hidden";
-        completeElement.style.visibility = "hidden";
+        deleteElement.style.display = "none";
+        completeElement.style.display = "none";
     }
 }
 
 function deleteButtonEventClick() {
     var eventId = clickedEvent;
+    var categoryName = addedTaskDict[eventId];
+    if (categoryName === '1') {
+        categoryName = "Exercise";
+    }
+    else if (categoryName === '2') {
+        categoryName = "Productivity";
+    }
+    else if (categoryName === '3') {
+        categoryName = "Mental Wellbeing";
+    }
     if (eventId != null) {
         var event = gloabalCal.getEventById(eventId);
         event.remove();
     }
-    if (taskDictionary.hasOwnProperty(eventId)) {
-        delete taskDictionary[eventId];
-    }
+    console.log(delete taskDictionary[categoryName]["projected"][eventId]);
+    console.log(delete addedTaskDict[eventId]);
     deleteButtonEventClickShow();
 }
 
 function completeButtonEventClick() {
-
+    var eventId = clickedEvent;
+    var categoryName = addedTaskDict[eventId];
+    if (categoryName === '1') {
+        categoryName = "Exercise";
+    }
+    else if (categoryName === '2') {
+        categoryName = "Productivity";
+    }
+    else if (categoryName === '3') {
+        categoryName = "Mental Wellbeing";
+    }
+    if (eventId != null) {
+        var event = gloabalCal.getEventById(eventId);
+        event.remove();
+    }
+    console.log(taskDictionary[categoryName]["daily"].push(eventId));
+    console.log(delete addedTaskDict[eventId]);
+    deleteButtonEventClickShow();
 }
-
 
 function addTaskToDictionary(eventIn) {
     var eventId = eventIn.event.id;
-    console.log(taskDictionary["Exercise"]["daily"][0] = eventId);
-}
-
-function popUpFunction() {
-    var popwindow = document.getElementById("popup-delete-confirm");
-    var test = popwindow.style.display;
-    if (test === "none") {
-        popwindow.style.display = "block";
-    } else {
-        popwindow.style.display = "none";
+    var categoryName = addedTaskDict[eventId];
+    if (categoryName === '1') {
+        categoryName = "Exercise";
     }
+    else if (categoryName === '2') {
+        categoryName = "Productivity";
+    }
+    else if (categoryName === '3') {
+        categoryName = "Mental Wellbeing";
+    }
+    console.log(taskDictionary[categoryName]["projected"].push(eventId));
 }

@@ -74,7 +74,6 @@
     </div>
 
     <div id="separatorDiv">
-      <!-- <div id="scheduleDiv"> -->
       <div id='external-events'>
         <div id="task-header">
           <h2>Add a new task</h2>
@@ -83,7 +82,7 @@
         <form id="addTaskForm" onsubmit="return addButton()">
           <input type="text" placeholder="Meditate" required />
           <br />
-          <select name="categoryOptions" required>
+          <select name="categoryOptions" id="categorySelection" required>
             <option></option>
             <option value="1">Exercise</option>
             <option value="2">Productivity</option>
@@ -101,21 +100,17 @@
         <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
           <div class='fc-event-main'>Take a break</div>
         </div>
+
         <div>
           <button type="button" id="delete-button" onclick="deleteButtonEventClick()">Delete Event</button>
           <button type="button" id="complete-button" onclick="completeButtonEventClick()">Complete Event</button>
         </div>
+
       </div>
 
       <div id='calendar-container'>
         <div id='calendar'></div>
       </div>
-      <!-- </div> -->
-
-      <!-- <div id="recDiv">
-        <h2 class="subheading buttonTitle"><a href="recommended.html">RECOMMENDED TASKS</a></h2>
-
-      </div> -->
     </div> <!-- separator for schedule and recommended widgets -->
   </div>
   <div id="racetrack">
