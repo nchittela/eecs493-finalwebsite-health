@@ -1,9 +1,13 @@
+#racetrack {
+  margin: 40px 0px;
+}
+
 #racetrack_img {
   height: 150px;
 }
 
 #car {
-  position: absolute;
-  top: 875px;
+  position: relative;
+  top: -145px;
   left: -105px;
 }
