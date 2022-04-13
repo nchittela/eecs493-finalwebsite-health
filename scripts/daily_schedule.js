@@ -1,6 +1,6 @@
 let globalCal;
 let clickedEvent = "";
-// 0 is nothing, 1 is Exercise, 2 is Productivity 3 is Mental Wellbeing
+// 0 is nothing, 1 is Exercise, 2 is Productivity 3 is MentalWellbeing
 let addedTaskDict = {
     "Go for a walk": '1',
     "Study": '2',
@@ -14,18 +14,18 @@ document.addEventListener('DOMContentLoaded', function () {
 // code for category selction and add button
 $(document).ready(function () {
     $('#addTaskForm input,select').on('change', function () {
-        var form = this.form;
-        var isValid = form.checkValidity();
+        form = this.form;
+        isValid = form.checkValidity();
         $(':submit').attr('disabled', !isValid);
     });
 });
 
 
 function loadCalendar() {
-    var Calendar = FullCalendar.Calendar;
-    var calendarEl = document.getElementById('calendar');
-    var Draggable = FullCalendar.Draggable;
-    var containerEl = document.getElementById('external-events');
+    Calendar = FullCalendar.Calendar;
+    calendarEl = document.getElementById('calendar');
+    Draggable = FullCalendar.Draggable;
+    containerEl = document.getElementById('external-events');
 
     // initialize the external events for dragable feature
     new Draggable(containerEl, {
@@ -90,8 +90,8 @@ function addButton() {
     const taskCategory = document.getElementById("addTaskForm")[1].value;
     addedTaskDict[taskText] = taskCategory;
 
-    // var addedTask = document.getElementById(taskText);
-    // var topVal = addedTask.offsetTop
+    //  addedTask = document.getElementById(taskText);
+    //  topVal = addedTask.offsetTop
     // if (topVal > 455) {
     //     addedTask.style.display = 'none';
     // }
@@ -99,17 +99,17 @@ function addButton() {
 }
 
 function deleteButtonEventClickShow() {
-    var deleteButton = "delete-button";
-    var completeButton = "complete-button";
-    // var styleProp = "visibility"
-    var styleProp = "display";
-    var deleteElement = document.getElementById(deleteButton);
-    var completeElement = document.getElementById(completeButton);
+    deleteButton = "delete-button";
+    completeButton = "complete-button";
+    //  styleProp = "visibility"
+    styleProp = "display";
+    deleteElement = document.getElementById(deleteButton);
+    completeElement = document.getElementById(completeButton);
     if (deleteElement.currentStyle) {
-        var deleteElementVis = deleteElement.currentStyle[styleProp];
+        deleteElementVis = deleteElement.currentStyle[styleProp];
     }
     else if (window.getComputedStyle) {
-        var deleteElementVis = document.defaultView.getComputedStyle(deleteElement, null).getPropertyValue(styleProp);
+        deleteElementVis = document.defaultView.getComputedStyle(deleteElement, null).getPropertyValue(styleProp);
     }
     // if (deleteElementVis === "hidden") {
     //     deleteElement.style.visibility = "visible";
@@ -128,8 +128,8 @@ function deleteButtonEventClickShow() {
 }
 
 function deleteButtonEventClick() {
-    var eventId = clickedEvent;
-    var categoryName = addedTaskDict[eventId];
+    eventId = clickedEvent;
+    categoryName = addedTaskDict[eventId];
     if (categoryName === '1') {
         categoryName = "Exercise";
     }
@@ -137,20 +137,21 @@ function deleteButtonEventClick() {
         categoryName = "Productivity";
     }
     else if (categoryName === '3') {
-        categoryName = "Mental Wellbeing";
+        categoryName = "MentalWellbeing";
     }
     if (eventId != null) {
         var event = gloabalCal.getEventById(eventId);
         event.remove();
     }
-    console.log(delete taskDictionary[categoryName]["projected"][eventId]);
+    indexToDelete = taskDictionary[categoryName]["projected"].indexOf(eventId, 0);
+    console.log(taskDictionary[categoryName]["projected"].splice(indexToDelete, 1));
     console.log(delete addedTaskDict[eventId]);
     deleteButtonEventClickShow();
 }
 
 function completeButtonEventClick() {
-    var eventId = clickedEvent;
-    var categoryName = addedTaskDict[eventId];
+    eventId = clickedEvent;
+    categoryName = addedTaskDict[eventId];
     if (categoryName === '1') {
         categoryName = "Exercise";
     }
@@ -158,7 +159,7 @@ function completeButtonEventClick() {
         categoryName = "Productivity";
     }
     else if (categoryName === '3') {
-        categoryName = "Mental Wellbeing";
+        categoryName = "MentalWellbeing";
     }
     if (eventId != null) {
         var event = gloabalCal.getEventById(eventId);
@@ -170,8 +171,8 @@ function completeButtonEventClick() {
 }
 
 function addTaskToDictionary(eventIn) {
-    var eventId = eventIn.event.id;
-    var categoryName = addedTaskDict[eventId];
+    eventId = eventIn.event.id;
+    categoryName = addedTaskDict[eventId];
     if (categoryName === '1') {
         categoryName = "Exercise";
     }
@@ -179,7 +180,7 @@ function addTaskToDictionary(eventIn) {
         categoryName = "Productivity";
     }
     else if (categoryName === '3') {
-        categoryName = "Mental Wellbeing";
+        categoryName = "MentalWellbeing";
     }
     console.log(taskDictionary[categoryName]["projected"].push(eventId));
 }
