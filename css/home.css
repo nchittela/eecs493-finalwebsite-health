@@ -1,131 +1,238 @@
 #homeTitle {
-  font-family: 'Montserrat', sans-serif;
-  font-style: italic;
-  font-size: 70px;
-}
-
-.subheading {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
-}
-
-#navbar {
-  list-style-type: none;
-  display: flex;
-  margin: 0;
-  padding: 14px;
-  overflow: hidden;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#spinnerLink {
-  padding-right: 10px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
-  background-color: rgb(149, 229, 255);
-  border-radius: 12px;
-}
-
-li a {
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-  color: black;
-}
-
-#widgetsDiv {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-}
-
-#scoresDiv {
-  width: 30%;
-  /* border: 2px solid black; */
-  margin: 10px;
-}
-
-#dailyCircle {
-  background-color: rgb(255, 204, 74);
-  width: 50%;
-  border-radius: 50%;
-  line-height: 0;
-  position: relative;
-}
-
-#dailyCircle::after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-}
-
-#dailyCircleNum {
-  position: absolute;
-  bottom: 50%;
-  width: 100%;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 80px;
-}
-
-#projCircle {
-  background-color: rgb(196, 255, 77);
-  width: 50%;
-  border-radius: 50%;
-  line-height: 0;
-  position: relative;
-}
-
-#projCircle::after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-}
-
-#projCircleNum {
-  position: absolute;
-  bottom: 50%;
-  width: 100%;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 80px;
-}
-
-#separatorDiv {
-  width: 70%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-#scheduleDiv {
-  height: 100px;
-  position: fixed;
-  /* border: 2px solid black; */
-  margin: 10px;
-}
-
-.buttonTitle {
-  background-color: rgb(149, 229, 255);
-  border-radius: 12px;
-  width: 40%;
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-}
-
-.buttonTitle::after {
-  text-decoration: none;
-  color: black;
-}
-
-#recDiv {
-  height: 100px;
-  /* border: 2px solid black; */
-  margin: 10px;
-}
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    font-style: italic;
+    font-size: 70px;
+    margin-bottom: 0px;
+  }
+  
+  .subheading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+  }
+  
+  #navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 14px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #spinnerLink {
+    padding: 0px 10px 0px 10px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    background-color: rgb(149, 229, 255);
+    border-radius: 12px;
+  }
+  
+  .popup {
+      float: right;
+  }
+  
+  .popup .roulette-backdrop {
+      clear: both;
+      visibility: hidden;
+      position: fixed;
+      background-color: gray;
+      top: 0vh;
+      left: 0vw;
+      height: 100vh;
+      width: 100vw;
+      opacity: 0.66;
+      z-index: 3;
+  }
+  
+  .popup .roulette-popup {
+      clear: both;
+      visibility: hidden;
+      position: fixed;
+      background-color: white;
+      height: 66vh;
+      width: 50vw;
+      top: 16.666vh;
+      left: 25vw;
+      border-color: black;
+      border-radius: 10px;
+      border-width: 3px;
+      border-style: solid;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      z-index: 4;
+  }
+  
+  .roulette-popup::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+  
+  .roulette-popup::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 10px;
+  }
+  
+  .roulette-popup::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+  }
+  
+  .popup .show {
+      visibility: visible;
+  }
+  
+  .categories {
+      display: none;
+  }
+  
+  .window-top{
+      display: flex;
+  }
+  
+  .check-box{
+      width: 33%;
+      padding: 10px;
+  }
+  
+  .result {
+      width: 66%;
+      padding: 2px;
+      margin: none;
+  }
+  
+  .result h1{
+      margin: none;
+  }
+  
+  .category, .check-box input{
+      margin: 2px;
+  }
+  
+  .wheels {
+      display: flex;
+      flex-wrap: nowrap;
+  }
+  
+  .spinner {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+  }
+  
+  .wheels .spinner img {
+      -webkit-transition: -webkit-transform 2s ease-out;
+  }
+  
+  .roulette {
+      display: inline-block;
+      object-fit: cover;
+      object-position: center;
+      height: 250px;
+      width: 250px;
+      margin-left: 20px;
+  }
+  
+  li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  
+  #widgetsDiv {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  #scoresDiv {
+    width: 30%;
+    /* border: 2px solid black; */
+    margin: 10px;
+  }
+  
+  #dailyCircle {
+    background-color: rgb(255, 204, 74);
+    width: 50%;
+    border-radius: 50%;
+    line-height: 0;
+    position: relative;
+  }
+  
+  #dailyCircle::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+  
+  #dailyCircleNum {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+  }
+  
+  #projCircle {
+    background-color: rgb(196, 255, 77);
+    width: 50%;
+    border-radius: 50%;
+    line-height: 0;
+    position: relative;
+  }
+  
+  #projCircle::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+  
+  #projCircleNum {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+  }
+  
+  #separatorDiv {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  #scheduleDiv {
+    height: 100px;
+    position: fixed;
+    /* border: 2px solid black; */
+    margin: 10px;
+  }
+  
+  .buttonTitle {
+    background-color: rgb(149, 229, 255);
+    border-radius: 12px;
+    width: 40%;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .buttonTitle::after {
+    text-decoration: none;
+    color: black;
+  }
+  
+  #recDiv {
+    height: 100px;
+    /* border: 2px solid black; */
+    margin: 10px;
+  }
