@@ -98,6 +98,35 @@ function addButton() {
     return false;
 }
 
+function addChosenTaskToDropDown(taskStringIn) {
+    fcEvent = document.createElement("div");
+    fcEvent.setAttribute("class", "fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event");
+
+    // crete a new inner div element
+    fcMain = document.createElement("div");
+    fcMain.setAttribute("class", "fc-event-main")
+
+    // and give inner div some content
+    const newContent = document.createTextNode(taskStringIn);
+
+    // add the text node to the newly created div
+    fcMain.appendChild(newContent);
+
+    // append new inner div to outer div
+    fcEvent.appendChild(fcMain);
+
+    // add the newly created element and its content into the DOM
+    // if the top won't overrun the size
+    const currentDiv = document.getElementById("addedEvents");
+    currentDiv.appendChild(fcEvent)
+
+    // add task to task list dictionary with its category
+    // 0 is nothing, 1 is Exercise, 2 is Productivity 3 is Mental Wellbeing
+    const taskCategory = '1';
+    addedTaskDict[taskStringIn] = taskCategory;
+    return false;
+}
+
 function deleteButtonEventClickShow() {
     deleteButton = "delete-button";
     completeButton = "complete-button";

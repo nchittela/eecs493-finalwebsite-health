@@ -39,7 +39,7 @@ function addActivity(activity, parent) {
 function check() {
     $('input[type="checkbox"]').click(function () {
         if ($(this).prop("checked") == true) {
-            let str = "<div class='spinner' id='"+$(this).val()+"-spinner'><img src='images/" + $(this).val() + ".png' class='roulette' id='" + $(this).val() + "-wheel'>"
+            let str = "<div class='spinner' id='" + $(this).val() + "-spinner'><img src='images/" + $(this).val() + ".png' class='roulette' id='" + $(this).val() + "-wheel'>"
             str += "<img src='images/arrow.png' class='arrow' id='" + $(this).val() + "-arrow'></div>"
             $('.wheels').append(str);
             let pos = $("#" + $(this).val() + "-wheel").position();
@@ -67,7 +67,8 @@ function submit() {
             var txt = '-webkit-transform: rotate(' + deg + 'deg);';
             $(this).attr('style', txt);
             activities += activitiesDict[$(this).attr("id")][Math.floor((deg % 360) / 60)] + " ";
-            taskDictionary['Exercise']['projected'].push(activitiesDict[$(this).attr("id")][Math.floor((deg % 360) / 60)]);
+            chosenActivityString = activitiesDict[$(this).attr("id")][Math.floor((deg % 360) / 60)];
+            addChosenTaskToDropDown(chosenActivityString);
         })
         $('.result').append("<h1>Your activities are " + activities + " </h1>")
         $('.result').css("display", "none");
