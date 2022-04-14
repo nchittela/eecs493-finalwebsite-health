@@ -1,29 +1,41 @@
- document.addEventListener('DOMContentLoaded', function() {
-     var calendarEl = document.getElementById('calendar');
-     var calendar = new FullCalendar.Calendar(calendarEl, {
-         initialView: 'dayGridMonth',
-         events: [{
-                 start: '2022-04-09',
-                 display: 'background',
-                 backgroundColor: 'black'
-             },
-             {
-                 start: '2022-04-08',
-                 display: 'background',
-                 backgroundColor: 'green'
-             },
-             {
-                 start: '2022-04-07',
-                 display: 'background',
-                 backgroundColor: 'blue'
-             },
-             {
-                 start: '2022-04-06',
-                 display: 'background',
-                 backgroundColor: 'red'
-             }
-         ],
+var events = [];
 
-     });
-     calendar.render();
- });
+let today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = yyyy + '-' + mm + '-' + dd;
+
+
+var todaysScore = sessionStorage.getItem("pastScores");
+console.log(todaysScore);
+var backgroundColor;
+
+if (todaysScore < 30) {
+    backgroundColor = 'red';
+} else if (todaysScore >= 30 && todaysScore < 60) {
+    backgroundColor = 'yellow'
+} else if (todaysScore >= 60) {
+    backgroundColor = 'green';
+}
+
+events.push({
+    start: today,
+    display: 'background',
+    backgroundColor: backgroundColor
+});
+
+console.log(events);
+document.addEventListener('DOMContentLoaded', function() {
+    loadCalendar();
+});
+
+function loadCalendar() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        events: events,
+    });
+    calendar.render();
+}
