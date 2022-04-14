@@ -1,5 +1,10 @@
 var dailyValue = document.getElementById("dailyCircle").innerText;
 // var dailyValue = document.querySelector('#dailyCircle');
+var pastScores = [];
+pastScores.push(dailyValue);
+
+sessionStorage.setItem("pastScores", pastScores);
+
 console.log(dailyValue);
 var scaledDailyScore = parseInt(document.getElementById("dailyCircle").innerText) / 100;
 // document.querySelector('color').style.color = makeColor(scaled_score);
