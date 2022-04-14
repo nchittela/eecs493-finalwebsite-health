@@ -4,6 +4,8 @@
     font-style: italic;
     font-size: 70px;
     margin-bottom: 0px;
+    float: left;
+    margin-top: 0;
   }
   
   .subheading {
@@ -22,7 +24,7 @@
   
   #spinnerLink {
     padding: 0px 10px 0px 10px;
-    margin: 0px;
+    /* margin: 0px; */
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     background-color: rgb(149, 229, 255);
