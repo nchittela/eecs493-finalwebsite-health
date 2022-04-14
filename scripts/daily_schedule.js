@@ -176,6 +176,7 @@ function deleteButtonEventClick() {
     console.log(taskDictionary[categoryName]["projected"].splice(indexToDelete, 1));
     console.log(delete addedTaskDict[eventId]);
     deleteButtonEventClickShow();
+    getNewScore(taskDictionary);
 }
 
 function completeButtonEventClick() {
@@ -203,6 +204,7 @@ function completeButtonEventClick() {
     console.log(taskDictionary[categoryName]["daily"].push(eventId));
     console.log(delete addedTaskDict[eventId]);
     deleteButtonEventClickShow();
+    getNewScore(taskDictionary);
 }
 
 function addTaskToDictionary(eventIn) {
@@ -218,4 +220,5 @@ function addTaskToDictionary(eventIn) {
         categoryName = "MentalWellbeing";
     }
     console.log(taskDictionary[categoryName]["projected"].push(eventId));
+    getNewScore(taskDictionary);
 }

@@ -161,7 +161,7 @@
   }
   
   #dailyCircle {
-    background-color: rgb(255, 204, 74);
+    background-color: rgb(255, 74, 74);
     width: 50%;
     border-radius: 50%;
     line-height: 0;
@@ -184,7 +184,7 @@
   }
   
   #projCircle {
-    background-color: rgb(196, 255, 77);
+    background-color: rgb(255, 74, 74);
     width: 50%;
     border-radius: 50%;
     line-height: 0;
