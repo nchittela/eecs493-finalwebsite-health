@@ -183,11 +183,6 @@ function completeButtonEventClick() {
     eventId = clickedEvent;
     categoryName = addedTaskDict[eventId];
 
-    // move the car forward on racetrack
-    daily_score = document.getElementById("dailyCircleNum").innerHTML;
-    projected_score = document.getElementById("projCircleNum").innerHTML;
-    $("#car").css("left", ((daily_score/projected_score)*$("#racetrack").width()) - 105);
-
     if (categoryName === '1') {
         categoryName = "Exercise";
     }
@@ -205,6 +200,13 @@ function completeButtonEventClick() {
     console.log(delete addedTaskDict[eventId]);
     deleteButtonEventClickShow();
     getNewScore(taskDictionary);
+
+    // move the car forward on racetrack
+    daily_score = document.getElementById("dailyCircleNum").innerHTML;
+    projected_score = document.getElementById("projCircleNum").innerHTML;
+    console.log("daily: " + document.getElementById("dailyCircleNum").innerHTML);
+    console.log("proj:" + document.getElementById("projCircleNum").innerHTML);
+    $("#car").css("left", ((daily_score/projected_score)*$("#racetrack").width()) - 105);
 }
 
 function addTaskToDictionary(eventIn) {
@@ -221,4 +223,11 @@ function addTaskToDictionary(eventIn) {
     }
     console.log(taskDictionary[categoryName]["projected"].push(eventId));
     getNewScore(taskDictionary);
+
+    // move the car forward on racetrack
+    daily_score = document.getElementById("dailyCircleNum").innerHTML;
+    projected_score = document.getElementById("projCircleNum").innerHTML;
+    console.log("daily: " + document.getElementById("dailyCircleNum").innerHTML);
+    console.log("proj:" + document.getElementById("projCircleNum").innerHTML);
+    $("#car").css("left", ((daily_score/projected_score)*$("#racetrack").width()) - 105);
 }
