@@ -4,6 +4,8 @@
 
 #racetrack_img {
   height: 150px;
+  /* object-fit: fill; */
+  width: 1400px;
 }
 
 #car {

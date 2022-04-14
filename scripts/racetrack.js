@@ -1,9 +1,12 @@
-let projected_score = 0;
-let daily_score = 0;
-let num_tasks = 0;
+let projected_score = 20;
+let daily_score = 5;
 
 $(document).ready( function() {
-
+  // console.log($("#car").css("left"));
+  
+  // $("#car").css("left", "1000px");
+  // console.log($("#car").css("left"));
+  // moveCar();
 });
 
 function celebrationSound() {
@@ -11,9 +14,7 @@ function celebrationSound() {
 }
 
 function moveCar() { //add to function when complete button clicked
-  var increment = $('#racetrack').width()/num_tasks;
-  var newPos = $('#car').css("right") + increment;
-  $('#car').css("right", newPos);
+  $("#car").css("left", ((daily_score/projected_score)*$("#racetrack").width()) - 105);
 }
 
 function eventTenMinuteReminder() {
