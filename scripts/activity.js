@@ -66,6 +66,9 @@ function check() {
 
 function submit() {
     $('#wheel-submit').click(function () {
+        $('.result').children().each(function(){
+            $(this).remove();
+        });
         let activities = '';
         $(".wheels").find('.roulette').each(function () {
             $(this).removeAttr('style');
