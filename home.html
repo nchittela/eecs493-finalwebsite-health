@@ -76,18 +76,20 @@
         <div id="separatorDiv">
             <div id='external-events'>
                 <div id="task-header">
-                    <h2>Add a new task</h2>
-                    <h3>Drag and Drop Tasks onto calendar</h3>
+                    <h2 class="calendarText">Add a New Task</h2>
+                    <h4 class="instructions">To add tasks to the calendar, drag and drop from the menu below.</h4>
+                    <h4 class="instructions">To complete or delete a task, click on the task in the calendar to see the desired actions.</h4>
                 </div>
                 <form id="addTaskForm" onsubmit="return addButton()">
-                    <input id="taskInputBox" type="text" placeholder="Meditate" required />
+                    <input id="taskInputBox" type="text" placeholder="Type in task name" required />
                     <br />
                     <select id="categorySelection" name="categoryOptions" required>
-            <option></option>
-            <option value="1">Exercise</option>
-            <option value="2">Productivity</option>
-            <option value="3">Mental Wellbeing</option>
-          </select>
+            <!-- <option></option> -->
+                        <option value="" disabled selected hidden>Select Task Category</option>
+                        <option value="1">Exercise</option>
+                        <option value="2">Productivity</option>
+                        <option value="3">Mental Wellbeing</option>
+                    </select>
                     <button type="submit" disabled="true">Add</button>
                 </form>
                 <div id="addedEvents">
