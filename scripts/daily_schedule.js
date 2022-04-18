@@ -116,7 +116,7 @@ function addButton() {
 
 function addChosenTaskToDropDown(taskStringIn) {
     fcEvent = document.createElement("div");
-    fcEvent.setAttribute("class", "fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event");
+    fcEvent.setAttribute("class", "Exercise fc-event fc-daygrid-event fc-daygrid-block-event");
 
     // crete a new inner div element
     fcMain = document.createElement("div");
