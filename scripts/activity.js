@@ -19,6 +19,15 @@ function popupSpinner() {
     popup.classList.toggle("show");
     var bd = document.getElementById("roulette-backdrop")
     bd.classList.toggle("show");
+    $('.wheels').children().each(function(){
+        $(this).remove();
+    });
+    $('.result').children().each(function(){
+        $(this).remove();
+    });
+    $( 'input[type="checkbox"]:checked' ).each(function(){
+        $(this).prop("checked", false);
+    });
 }
 
 function buildChecklist(parent, target) {
@@ -57,7 +66,7 @@ function check() {
 
 function submit() {
     $('#wheel-submit').click(function () {
-        activities = '';
+        let activities = '';
         $(".wheels").find('.roulette').each(function () {
             $(this).removeAttr('style');
             var deg = 500 + Math.round(Math.random() * 1000);
