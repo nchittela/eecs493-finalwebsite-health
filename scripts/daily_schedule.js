@@ -22,10 +22,10 @@ $(document).ready(function () {
 
 
 function loadCalendar() {
-    Calendar = FullCalendar.Calendar;
-    calendarEl = document.getElementById('calendar');
-    Draggable = FullCalendar.Draggable;
-    containerEl = document.getElementById('external-events');
+    var Calendar = FullCalendar.Calendar;
+    var calendarEl = document.getElementById('calendar');
+    var Draggable = FullCalendar.Draggable;
+    var containerEl = document.getElementById('external-events');
 
     // initialize the external events for dragable feature
     new Draggable(containerEl, {
@@ -34,24 +34,24 @@ function loadCalendar() {
             eventCategory = addedTaskDict[eventEl.innerText];
             desiredColor = '#000'
             if (eventCategory === '1') {
-                desiredColor = 'red';
+                desiredColor = '#ff4a4a';
             }
             else if (eventCategory === '2') {
-                desiredColor = 'green';
+                desiredColor = '#00ff00';
             }
             else if (eventCategory === '3') {
-                desiredColor = 'purple';
+                desiredColor = '#95e5ff';
             }
             return {
                 title: eventEl.innerText,
                 id: eventEl.innerText,
-                color: desiredColor
+                color: desiredColor,
             };
         }
     });
 
     // init Calendar
-    calendar = new Calendar(calendarEl, {
+    var calendar = new Calendar(calendarEl, {
         initialView: 'timeGridDay',
         editable: true,
         selectable: true,

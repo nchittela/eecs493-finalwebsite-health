@@ -38,19 +38,19 @@ body {
 
 .Exercise {
   display: block;
-  background-color: red;
+  background-color: rgb(255, 74, 74);
   color: #fff;
 }
 
 .Productivity {
   display: block;
-  background-color: green;
+  background-color: rgb(0, 255, 0);
   color: #fff;
 }
 
 .MentalWellbeing {
   display: block;
-  background-color: purple;
+  background-color: rgb(149, 229, 255);
   color: #fff;
 }
 
