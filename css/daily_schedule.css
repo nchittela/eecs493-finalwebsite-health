@@ -36,6 +36,24 @@ body {
   text-align: center;
 }
 
+.Exercise {
+  display: block;
+  background-color: red;
+  color: #fff;
+}
+
+.Productivity {
+  display: block;
+  background-color: green;
+  color: #fff;
+}
+
+.MentalWellbeing {
+  display: block;
+  background-color: purple;
+  color: #fff;
+}
+
 #task-header {
   font-size: 20px;
   text-align: center;

@@ -78,13 +78,14 @@
                 <div id="task-header">
                     <h2 class="calendarText">Add a New Task</h2>
                     <h4 class="instructions">To add tasks to the calendar, drag and drop from the menu below.</h4>
-                    <h4 class="instructions">To complete or delete a task, click on the task in the calendar to see the desired actions.</h4>
+                    <h4 class="instructions">To complete or delete a task, click on the task in the calendar to see the
+                        desired actions.</h4>
                 </div>
                 <form id="addTaskForm" onsubmit="return addButton()">
                     <input id="taskInputBox" type="text" placeholder="Type in task name" required />
                     <br />
                     <select id="categorySelection" name="categoryOptions" required>
-            <!-- <option></option> -->
+                        <!-- <option></option> -->
                         <option value="" disabled selected hidden>Select Task Category</option>
                         <option value="1">Exercise</option>
                         <option value="2">Productivity</option>
@@ -93,13 +94,13 @@
                     <button type="submit" disabled="true">Add</button>
                 </form>
                 <div id="addedEvents">
-                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                    <div class='Exercise fc-event fc-daygrid-event fc-daygrid-block-event'>
                         <div class='fc-event-main'>Go for a walk</div>
                     </div>
-                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                    <div class='Productivity fc-event fc-daygrid-event fc-daygrid-block-event'>
                         <div class='fc-event-main'>Study</div>
                     </div>
-                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                    <div class='MentalWellbeing fc-event fc-daygrid-event fc-daygrid-block-event'>
                         <div class='fc-event-main'>Take a break</div>
                     </div>
                 </div>
